@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Feb 19 18:36:44 2023
-
-@author: 86138
-"""
 import numpy as np
 import cv2
 from PIL import Image, ImageDraw
