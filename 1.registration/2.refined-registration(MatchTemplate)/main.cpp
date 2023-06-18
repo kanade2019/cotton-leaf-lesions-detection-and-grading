@@ -15,19 +15,19 @@ int main()
 {
 	//namedWindow("1", WINDOW_AUTOSIZE);
 	ofstream data("time2.txt", ios::trunc);
-	string filepath = "D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/data/cut_image/";
-	string outpath = "D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/data/t/";
-	//string savepath = "D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/";
+	string filepath = "D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/data/cut_image/";
+	string outpath = "D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/data/t/";
+	//string savepath = "D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/";
 	vector<string> fileindex;
 	//glob(filepath, fileindex);
-	glob("D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/data/restart/", fileindex);
+	glob("D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/data/restart/", fileindex);
 	vector<string> filenum;
 	for (vector<string>::iterator first = fileindex.begin(); first != fileindex.end(); first++)
 		if (first->find("RGB.JPG") != string::npos)
 			filenum.push_back(first->substr(first->rfind("\\") + 1, first->rfind("RGB.JPG") - first->rfind("\\") - 1));
 	for (vector<string>::iterator first = filenum.begin(); first != filenum.end(); first++)
 	{
-		Mat rgb = imread("D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/data/restart/" + *first + "RGB.JPG");
+		Mat rgb = imread("D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/data/restart/" + *first + "RGB.JPG");
 		Mat gre = imread(filepath + *first + "GRE.TIF", 0);
 		Mat red = imread(filepath + *first + "RED.TIF", 0);
 		Mat reg = imread(filepath + *first + "REG.TIF", 0);
@@ -98,7 +98,7 @@ Mat window(Mat InputArray,Mat InputTemplate, unsigned short mode)
 	Mat res = Mat::zeros(Size(InputArray.cols - sp.width + 1, InputArray.rows - sp.height + 1), CV_32F);
 	//Mat res = Mat_<double>(InputArray.cols - sp.width + 1, InputArray.rows - sp.height + 1);
 	//matchTemplate(InputArray, InputTemplate, res, TM_CCOEFF_NORMED);
-	//string savepath = "D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/data/t/1/";
+	//string savepath = "D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/data/t/1/";
 	//int num = 1;
 	stringstream num_s;
 	Mat dst = Mat::zeros(sp, CV_8U);
@@ -124,7 +124,7 @@ Mat window(Mat InputArray,Mat InputTemplate, unsigned short mode)
 	}
 	//Mat temp = Mat::zeros(Size(InputArray.cols - sp.width + 1, InputArray.rows - sp.height + 1), CV_8UC1);
 	//temp = res*255;
-	//imwrite("D:/study/lib/ÃŞ»¨/Ğ¡ÂÛÎÄ/data/t/1/0.bmp", temp);
+	//imwrite("D:/study/lib/æ£‰èŠ±/å°è®ºæ–‡/data/t/1/0.bmp", temp);
 	//getchar();
 	//imshow("res", res);
 	//waitKey(100);
